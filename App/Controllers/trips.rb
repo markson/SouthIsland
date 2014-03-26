@@ -1,0 +1,2 @@
+get '/trips' do
+end
