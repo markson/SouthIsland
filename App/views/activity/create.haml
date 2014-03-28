@@ -1,0 +1,34 @@
+%form.form-horizontal.col-sm-8{action:'/activities', method:'post'}
+  .form-group
+    %label.col-sm-2.control-label Name
+    .col-sm-10
+      %input.form-control#inputName{type:'text',name:'name', placeholder:'Enter Name'}
+  .form-group
+    %label.col-sm-2.control-label Description
+    .col-sm-10
+      %input.form-control#inputDescription{type:'text',name:'description', placeholder:'Enter Description'}
+  .form-group
+    %label.col-sm-2.control-label Adult Cost
+    .col-sm-10
+      %input.form-control#inputAdultCost{type:'number', name:'adult_cost', placeholder:'00.00'}
+  .form-group
+    %label.col-sm-2.control-label Child Cost
+    .col-sm-10
+      %input.form-control#inputChildCost{type:'number', name:'child_cost', placeholder:'00.00'}
+  .form-group
+    %label.col-sm-2.control-label Latitude
+    .col-sm-10
+      %input.form-control#inputLatitude{type:'number', name:'latitude', placeholder:'00.00'}
+  .form-group
+    %label.col-sm-2.control-label Longitude
+    .col-sm-10
+      %input.form-control#inputLongitude{type:'number', name:'longitude', placeholder:'00.00'}
+  .form-group
+    %label.col-sm-2.control-label Company
+    .col-sm-10
+      %select.form-control{name:'company_id'}
+        - @companies.each do |company|
+          %option{value:company.id}= company.name
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      %button.btn.btn-default{type:'submit'} Submit

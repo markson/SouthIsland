@@ -1,0 +1,15 @@
+%table.table.table-hover.center
+  %thead
+    %tr
+      %th Name
+      %th Description
+      %th Adult Cost
+      %th Child Cost
+  %tbody
+    - @activities.each do |activity|
+      %tr
+        %td= activity.name
+        %td= activity.description
+        %td= activity.adult_cost
+        %td= activity.child_cost
+
