@@ -1,0 +1,25 @@
+%table.table.table-hover
+  %thead
+    %tr
+      %th{colspan:'2'}= @activity.name
+  %tbody
+    %tr
+      %th Description
+      %td=@activity.description
+    %tr
+      %th Adult Cost
+      %td=@activity.adult_cost
+    %tr
+      %th Child Cost
+      %td=@activity.child_cost
+    %tr
+      %th Latitude
+      %td=@activity.latitude
+    %tr
+      %th Longitude
+      %td=@activity.longitude
+    %tr
+      %th Company
+      %td
+        %a{href:"/company/#{@activity.company_id}"}= @activity.company.name
+

@@ -1,0 +1,12 @@
+%form.form-horizontal.col-sm-8{action:'/companies', method:'post'}
+  .form-group
+    %label.col-sm-2.control-label Name
+    .col-sm-10
+      %input.form-control#inputName{type:'text',name:'name', placeholder:'Enter Name'}
+  .form-group
+    %label.col-sm-2.control-label Description
+    .col-sm-10
+      %input.form-control#inputDescription{type:'textarea',name:'description', placeholder:'Enter Description'}
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      %button.btn.btn-default{type:'submit'} Submit

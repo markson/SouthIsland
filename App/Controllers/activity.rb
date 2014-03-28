@@ -1,7 +1,14 @@
 get '/activities' do
+	@js_partial = "ancher-row"
 	@activities = Activity.all
 	@title = "Show all activities"
-	haml :'activity/list'
+	haml :'activity/activities-get'
+end
+
+get '/activity/:id' do
+	@activity = Activity.get(params[:id])
+	@title = "Details of #{@activity.name}"
+	haml :'activity/activity-get'
 end
 
 post '/activities' do

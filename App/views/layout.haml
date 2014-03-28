@@ -5,64 +5,14 @@
     %link{href:'/css/main.css', type:'text/css', rel:'stylesheet'}
     %script{type:'text/javascript', src:'/js/jquery.js'}
     %script{type:'text/javascript', src:'/js/bootstrap.js'}
-    %title= @title
+    - if(defined? @js_partial)
+      %script{type:'text/javascript', src:"/js/#{@js_partial}.js"}
+    - if(defined? @js_partials)
+      -@js_partials.each do |js_partial|
+        %script{type:'text/javascript', src:"/js/#{js_partial}.js"}
+    %title= @title ? @title : "Untitled"
   %body
-    %nav.navbar.navbar-inverse.navbar-static-top
-      .container-fluid
-        .navbar-header
-          %a.navbar-brand{href:'/'} CRM
-        %div
-          %ul.nav.navbar-nav
-            %li.dropdown
-              %a.dropdown-toggle{href:'/activities', :'data-toggle' => 'dropdown'}
-                Activity
-                %b.caret
-              %ul.dropdown-menu
-                %li
-                  %a{href:'/activities'} List All
-                %li.divider
-                %li
-                  %a{href:'/create/activity'} Create
-            %li.dropdown
-              %a.dropdown-toggle{href:'/companies', :'data-toggle' => 'dropdown'}
-                Company
-                %b.caret
-              %ul.dropdown-menu
-                %li
-                  %a{href:'/companies'} List All
-                %li.divider
-                %li
-                  %a{href:'/create/company'} Create
-            %li.dropdown
-              %a.dropdown-toggle{href:'/bookings', :'data-toggle' => 'dropdown'}
-                Booking
-                %b.caret
-              %ul.dropdown-menu
-                %li
-                  %a{href:'/bookings'} List All
-                %li.divider
-                %li
-                  %a{href:'/create/booking'} Create
-            %li.dropdown
-              %a.dropdown-toggle{href:'/customers', :'data-toggle' => 'dropdown'}
-                Customer
-                %b.caret
-              %ul.dropdown-menu
-                %li
-                  %a{href:'/customers'} List All
-                %li.divider
-                %li
-                  %a{href:'/create/customer'} Create
-            %li.dropdown
-              %a.dropdown-toggle{href:'/trips', :'data-toggle' => 'dropdown'}
-                Trip
-                %b.caret
-              %ul.dropdown-menu
-                %li
-                  %a{href:'/trips'} List All
-                %li.divider
-                %li
-                  %a{href:'/create/trip'} Create
+    = haml :"_navbar"
     %main.container
       =yield
 

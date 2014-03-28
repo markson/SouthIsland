@@ -1,0 +1,12 @@
+
+%table.table.table-hover{:'data-resource' => "company"}
+  %thead
+    %tr
+      %th Name
+      %th Description
+  %tbody
+    -@companies.each do |company|
+      %tr.ancherRow{:'data-id' => company.id}
+        %td= company.name
+        %td= company.description
+

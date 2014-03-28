@@ -1,0 +1,15 @@
+%table.table.table-hover{:'data-resource' => "activity"}
+  %thead
+    %tr
+      %th Name
+      %th Description
+      %th Adult Cost
+      %th Child Cost
+  %tbody
+    -@activities.each do |activity|
+      %tr.ancherRow{:'data-id' => activity.id}
+        %td= activity.name
+        %td= activity.description
+        %td= activity.adult_cost
+        %td= activity.child_cost
+

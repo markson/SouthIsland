@@ -3,10 +3,10 @@ class Activity
 	property :id,Serial
 	property :name, String
 	property :description, Text
-	property :adult_cost, Integer
-	property :child_cost, Integer
-	property :latitude, Integer
-	property :longitude, Integer
+	property :adult_cost, Float
+	property :child_cost, Float
+	property :latitude, Float
+	property :longitude, Float
 
 	belongs_to :company
 	has n, :bookings

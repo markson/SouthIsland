@@ -1,5 +1,9 @@
 get '/create/activity' do
 	@companies = Company.all
-	haml :'activity/create'
+	haml :'create/activity'
+end
+
+get '/create/company' do
+	haml :'create/company'
 end
 
