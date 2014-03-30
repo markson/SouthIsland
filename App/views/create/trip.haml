@@ -1,0 +1,14 @@
+%form.form-horizontal.col-sm-8{action:'/trips', method:'post'}
+  .form-group
+    %label.col-sm-2.control-label Booked At
+    .col-sm-10
+      %input.form-control#inputBookedAt{type:'Date',name:'booked_at', placeholder:'2014-12-12'}
+  .form-group
+    %label.col-sm-2.control-label Agent
+    .col-sm-10
+      %select.form-control{name:'agent_id'}
+        - @agents.each do |agent|
+          %option{value:agent.id}= agent.name
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      %button.btn.btn-default{type:'submit'} Submit

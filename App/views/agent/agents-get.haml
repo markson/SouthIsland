@@ -1,0 +1,10 @@
+%table.table.table-hover{:'data-resource' => "agent"}
+  %thead
+    %tr
+      %th Name
+      %th Number of Trips
+  %tbody
+    -@agents.each do |agent|
+      %tr.ancherRow{:'data-id' => agent.id}
+        %td= agent.name
+        %td= agent.trips.count

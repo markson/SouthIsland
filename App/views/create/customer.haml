@@ -1,0 +1,25 @@
+%form.form-horizontal.col-sm-8{action:'/customers', method:'post'}
+
+  .form-group
+    %label.col-sm-2.control-label First Name
+    .col-sm-10
+      %input.form-control#inputFirstName{type:'text',name:'f_name', placeholder:'John'}
+
+  .form-group
+    %label.col-sm-2.control-label Last Name
+    .col-sm-10
+      %input.form-control#inputLastName{type:'text',name:'l_name', placeholder:'Appleseed'}
+
+  .form-group
+    %label.col-sm-2.control-label Gender
+    .col-sm-10
+      %input.form-control#inputGender{type:'text',name:'gender', placeholder:'unisex'}
+
+  .form-group
+    %label.col-sm-2.control-label Birdth Day
+    .col-sm-10
+      %input.form-control#inputDateOfBirth{type:'date',name:'data_of_birth', placeholder:'John'}
+
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      %button.btn.btn-default{type:'submit'} Submit

@@ -1,0 +1,14 @@
+%table.table.table-hover{:'data-resource' => "customer"}
+  %thead
+    %tr
+      %th First Name
+      %th Last Name
+      %th Birth Day
+      %th Gender
+  %tbody
+    -@customers.each do |customer|
+      %tr.ancherRow{:'data-id' => customer.id}
+        %td= customer.f_name
+        %td= customer.l_name
+        %td= customer.date_of_birth
+        %td= customer.gender

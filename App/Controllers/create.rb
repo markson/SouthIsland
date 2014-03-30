@@ -7,3 +7,16 @@ get '/create/company' do
 	haml :'create/company'
 end
 
+get '/create/customer' do
+	haml :'create/customer'
+end
+
+get '/create/agent' do
+	haml :'create/agent'
+end
+
+get '/create/trip' do
+	@agents = Agent.all
+	haml :'create/trip'
+end
+

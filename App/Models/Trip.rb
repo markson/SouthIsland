@@ -5,4 +5,5 @@ class Trip
 
 	has n, :bookings
 	has n, :activities, :through => :bookings
+	has n, :agents, :through => Resource
 end

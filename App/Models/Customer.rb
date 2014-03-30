@@ -3,7 +3,8 @@ class Customer
 	property :id, Serial
 	property :f_name, String
 	property :l_name, String
-	property :data_of_birth, Date
+	property :date_of_birth, Date
 	property :gender, String
 
+	has n, :bookings, through:Resource
 end
